@@ -8,6 +8,9 @@ const app = new Koa();
 
 const router = new KoaRouter();
 
+// replace with DB
+const things = ["My family", "programming", "canyniong"]
+
 // json Prettier Middleware
 app.use(json());
 
@@ -22,10 +25,17 @@ render(app, {
   debug: false
 })
 
-// index
-router.get('/', async ctx => {
-  await ctx.render('index');
-});
+// Routes
+router.get('/', index);
+
+// List of things
+async function index(ctx) {
+  await ctx.render('index', {
+    tittle: "Things I love",
+    things: things
+  });
+}
+
 
 router.get('/test', ctx => ctx.body = 'Hello test');
 

@@ -1,1 +1,11 @@
-<h1>Things that I love</h1>
+<h1>
+  <%- tittle %>
+</h1>
+
+<ul class="list-group">
+  <% things.forEach(things => {%>
+    <li class="list-group-item">
+      <%= things %>
+    </li>
+  <% });%>
+</ul>
