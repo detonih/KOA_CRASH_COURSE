@@ -1,0 +1,1 @@
+This is just a little project for a crash course for an initial knowledge about KOA.
